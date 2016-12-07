@@ -1,5 +1,35 @@
-sidebar{
+:host{
   width: 30%;
+  height: 82vh;
   padding: 10px;
   background-color: #FCF798;
+  text-align: center;
+  overflow: auto;
+}
+
+.my-profile{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  background-color: #74D2FF;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+  margin-top: 5px;
+}
+.my-profile:hover {
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+  background-color: #6dc0ed;
+}
+button{
+  padding: 15px;
+  background-color: #5CA4CA;
+  border: none;
+  border-radius: 3px;
+  color: white;
+  font-size: 15px;
+}
+.delete:hover{
+  cursor: pointer;
 }
