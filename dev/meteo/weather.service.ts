@@ -12,11 +12,18 @@ export class WeatherService {
       return WEATHER_ITEMS;
     }
     addWeatherItem(weatherItem: WeatherItem){
-      WEATHER_ITEMS.push(weatherItem)
+      WEATHER_ITEMS.push(weatherItem);
+      console.log(WEATHER_ITEMS, 'ITEMS');
     }
     clearWeatherItems() {
       WEATHER_ITEMS.splice(0);
     }
+    clearAllWeatherItems() {
+      while (WEATHER_ITEMS.length > 0 ){
+        WEATHER_ITEMS.pop()
+      }
+    }
+
     searchWeatherData(cityName: string): Observable<any>{
         return this._http.get('http://api.openweathermap.org/data/2.5/weather?q=' + cityName + '&APPID=bf24d4ebdd1fd36ff8a1a73369906a37&units=metric')
           .map(response => response.json())

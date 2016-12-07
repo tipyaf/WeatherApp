@@ -10,8 +10,8 @@ import {WeatherItem} from "./weather";
                 <span class="temperature">{{weatherItem.temperature}}°C</span>
             </div>
             <div class="col-3">
-            {{weatherItem.description}}
-                <!--<img *ngif="weatherItem.description == 'clear sky'" src="img/sunbed.png" alt="sunbed">-->
+            <!--{{weatherItem.description}}-->
+                <img src="http://openweathermap.org/img/w/{{weatherItem.icon}}" alt="weatherItem.description">
             </div>
         </article>
 `,
@@ -20,5 +20,4 @@ import {WeatherItem} from "./weather";
 })
 export class WeatherItemComponent {
   @Input('item') weatherItem: WeatherItem
-
 }

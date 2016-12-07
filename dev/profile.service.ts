@@ -4,7 +4,7 @@
 import {Profile} from "./profile";
 export class ProfileService {
   private profiles : Profile[] = [
-      new Profile ('Reset', ['', '', ''])
+      new Profile ('Reset', ['Montpellier', 'Lyon', 'Paris'])
   ];
   saveNewProfile(cities: string[]){
     const profileName = 'Profile ' + this.profiles.length;

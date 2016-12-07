@@ -49,7 +49,5 @@ export class WeatherSearchComponent implements OnInit {
             data => this.data = data
           )
 
-
-
   }
 }

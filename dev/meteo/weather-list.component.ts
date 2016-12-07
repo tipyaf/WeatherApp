@@ -8,6 +8,7 @@ import {WeatherService} from "./weather.service";
   template: `
     <section class="weather-list">
       <weather-item *ngFor="#weatherItem of weatherItems" [item]="weatherItem"></weather-item>
+      <button (click)="onClearAll()">X</button>
     </section>
 `,
   directives:[WeatherItemComponent],
@@ -17,6 +18,9 @@ export class WeatherListComponent implements OnInit{
     weatherItems: WeatherItem[];
   constructor(private _weatherService: WeatherService){}
 
+  onClearAll(){
+      this._weatherService.clearAllWeatherItems();
+  }
   ngOnInit():any{
     this.weatherItems = this._weatherService.getWeatherItems();
   }
