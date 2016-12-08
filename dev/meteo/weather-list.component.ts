@@ -3,15 +3,18 @@ import {WeatherItemComponent} from "./weather-item.component"
 import {WeatherItem} from "./weather";
 import {OnInit} from "angular2/src/core/linker/interfaces";
 import {WeatherService} from "./weather.service";
+import {WeatherSearchComponent} from "./weather-search.component";
 @Component({
   selector: 'weather-list',
   template: `
     <section class="weather-list">
+    <weather-search></weather-search>
       <weather-item *ngFor="#weatherItem of weatherItems" [item]="weatherItem"></weather-item>
-      <button (click)="onClearAll()">X</button>
+      
+      <a class="btn-floating btn-large waves-effect waves-light red right" (click)="onClearAll()"><i class="material-icons">clear</i></a>
     </section>
 `,
-  directives:[WeatherItemComponent],
+  directives:[WeatherItemComponent, WeatherSearchComponent],
   providers:[WeatherService]
 })
 export class WeatherListComponent implements OnInit{

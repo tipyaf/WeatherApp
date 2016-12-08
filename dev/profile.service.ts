@@ -4,10 +4,10 @@
 import {Profile} from "./profile";
 export class ProfileService {
   private profiles : Profile[] = [
-      new Profile ('Reset', ['Montpellier', 'Lyon', 'Paris'])
+      new Profile ('Par défaut', ['Montpellier', 'Lyon', 'Paris'])
   ];
   saveNewProfile(cities: string[]){
-    const profileName = 'Profile ' + this.profiles.length;
+    const profileName = 'Profil ' + this.profiles.length;
     const profile = new Profile(profileName, cities);
     this.profiles.push(profile);
   }

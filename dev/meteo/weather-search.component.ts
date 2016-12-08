@@ -23,9 +23,9 @@ export class WeatherSearchComponent implements OnInit {
   data: any = {};
   constructor(private _weatherService: WeatherService){}
   onSubmit(form){
-      const weatherItem = new WeatherItem(this.data.name, this.data.weather[0].description, this.data.main.temp)
+      const weatherItem = new WeatherItem(this.data.name, this.data.weather[0].description, this.data.main.temp, this.data.weather[0].icon)
       this._weatherService.addWeatherItem(weatherItem)
-
+      console.log(WeatherItem)
   }
 
   onSearchLocation(cityName: string, data){

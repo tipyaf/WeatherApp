@@ -4,19 +4,23 @@ import {ProfileService} from "./profile.service";
 import {WeatherService} from "./meteo/weather.service";
 import {OnInit} from "angular2/src/core/linker/interfaces";
 import {WeatherItem} from "./meteo/weather";
+import {WeatherSearchComponent} from "./meteo/weather-search.component";
 @Component({
   selector: 'sidebar',
   template: `
-    <h3>Enregistrement de profiles</h3>
+    <h3>Mes villes</h3>
     <button (click)="onSaveNew()">Enregistrer</button>
     <article class="my-profile" *ngFor="#profile of profiles" (click)="onLoadProfile(profile)" >
     <h4>{{profile.profileName}}</h4>
     <p>Villes : {{profile.cities.join(', ')}}</p>
     <span class="delete" (click)="onDeleteProfile($event, profile)">X</span>
 </article>
+
 `,
+
   styleUrls: ['src/css/sidebar.css'],
-  providers:[ProfileService]
+  providers:[ProfileService],
+
 })
 export class SidebarComponent implements OnInit{
   profiles: Profile[]
@@ -34,7 +38,7 @@ export class SidebarComponent implements OnInit{
         .retry()
         .subscribe(
           data => {
-            const weatherItem = new WeatherItem(data.name, data.weather[0].description, data.main.temp);
+            const weatherItem = new WeatherItem(data.name, data.weather[0].description, data.main.temp, data.weather[0].icon);
             this._weatherService.addWeatherItem(weatherItem);
           }
         );

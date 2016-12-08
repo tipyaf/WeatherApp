@@ -10,8 +10,7 @@ import {WeatherItem} from "./weather";
                 <span class="temperature">{{weatherItem.temperature}}°C</span>
             </div>
             <div class="col-3">
-            <!--{{weatherItem.description}}-->
-                <img src="http://openweathermap.org/img/w/{{weatherItem.icon}}" alt="weatherItem.description">
+                <img src="http://openweathermap.org/img/w/{{weatherItem.icon}}.png" alt="{{weatherItem.description}}">
             </div>
         </article>
 `,
