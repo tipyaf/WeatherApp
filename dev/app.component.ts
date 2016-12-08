@@ -16,7 +16,6 @@ import {SidebarComponent} from "./sidebar.component";
 </div>
 
    
-    <footer></footer>
     `,
   directives: [WeatherListComponent,  SidebarComponent]
 })

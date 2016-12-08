@@ -7,14 +7,13 @@ import {OnInit} from "angular2/src/core/linker/interfaces";
   selector: 'weather-search',
   template: `
     <section class="weather-search">
-      <form (ngSubmit)="onSubmit(f)" #f="ngForm">
-      <label for="city">Ville</label>
-       <input ngControl="location" type="text" id="city" (input)="onSearchLocation(input.value, data)" minlength="1" required #input>
-        <button type="submit">Ajouter</button>
-      </form>
-       <div>
-        <span class="info">Ville trouvée : </span> {{data.name}}
+      <form  #f="ngForm">
+      <div class="search-wrapper row">
+            <input class="col s10" id="search" ngControl="location" type="text" id="city" (input)="onSearchLocation(input.value, data)" minlength="1" required #input><i class="material-icons col s2" (ngSubmit)="onSubmit(f)">search</i>
+            <div class="search-results col s12">{{data.name}}</div>
       </div>
+      </form>
+
     </section>
 `,
 })
