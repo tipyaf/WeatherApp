@@ -1,9 +1,18 @@
 :host{
-  width: 30%;
+  width: 40%;
   height: 100vh;
   padding: 10px;
   text-align: center;
   overflow: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.5s;
+
+}
+.none{
+  display: none;
 }
 
 .my-profile{
@@ -18,3 +27,8 @@ button{
 .delete:hover{
   cursor: pointer;
 }
+
+.icon-settings i{
+color: rgba(240, 248, 255, 0.31);
+}
+

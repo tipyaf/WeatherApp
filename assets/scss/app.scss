@@ -1,8 +1,12 @@
+
 body {
   //padding: 32px;
   margin: 0 !important;
   font-family: "Roboto", Arial, sans-serif;
   font-size: 16px;
+  background: url("../../img/bkg.jpg") fixed no-repeat center;
+  background-size: cover;
+  color: white !important;
 }
 header{
   background-color: #74D2FF;
@@ -17,9 +21,7 @@ header{
   display: flex;
   flex-direction: row;
 }
-weather-list{
-  width:70%;
-}
+
 .title{
   color: #FCF798;
   width: 25%;
@@ -30,6 +32,26 @@ weather-list{
   margin-left: 5px;
   font-size: 32px;
 }
-.weather-search{
-  margin: auto;
+.weather-search form{
+  width: 100%;
+  text-align: center;
+
+}
+.weather-search form input{
+  font-size: 28px !important;
+  background-color: rgba(0, 21, 64, 0.35);
+}
+
+input:not([type]):focus:not([readonly]), input[type=text]:focus:not([readonly]), input[type=password]:focus:not([readonly]), input[type=email]:focus:not([readonly]), input[type=url]:focus:not([readonly]), input[type=time]:focus:not([readonly]), input[type=date]:focus:not([readonly]), input[type=datetime]:focus:not([readonly]), input[type=datetime-local]:focus:not([readonly]), input[type=tel]:focus:not([readonly]), input[type=number]:focus:not([readonly]), input[type=search]:focus:not([readonly]), textarea.materialize-textarea:focus:not([readonly]) {
+  border-bottom: 1px solid #e0e0e0 !important;
+  box-shadow: 0 1px 0 0 #e0e0e0 !important;
+}
+.sidebar-closed{
+  width: 0 !important;
+  transition: all 0.5s;
+}
+.remove-btn{
+  position: fixed;
+  bottom: 5px;
+  right: 5px;
 }

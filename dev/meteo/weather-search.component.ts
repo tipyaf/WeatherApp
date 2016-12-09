@@ -9,8 +9,8 @@ import {OnInit} from "angular2/src/core/linker/interfaces";
     <section class="weather-search">
       <form  #f="ngForm">
       <div class="search-wrapper row">
-            <input class="col s10" id="search" ngControl="location" type="text" id="city" (input)="onSearchLocation(input.value, data)" minlength="1" required #input><i class="material-icons col s2" (ngSubmit)="onSubmit(f)">search</i>
-            <div class="search-results col s12">{{data.name}}</div>
+            <input class="col s10" ngControl="location" type="text" id="city" (input)="onSearchLocation(input.value, data)" minlength="1" required #input>
+            <div type="submit" class="search-results col s12" (click)="onSubmit(f)">{{data.name}} <i class="material-icons col s2">search</i></div>
       </div>
       </form>
 

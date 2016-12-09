@@ -4,27 +4,39 @@ import {ProfileService} from "./profile.service";
 import {WeatherService} from "./meteo/weather.service";
 import {OnInit} from "angular2/src/core/linker/interfaces";
 import {WeatherItem} from "./meteo/weather";
-import {WeatherSearchComponent} from "./meteo/weather-search.component";
 @Component({
   selector: 'sidebar',
   template: `
-    <h3>Mes villes</h3>
-    <button (click)="onSaveNew()">Enregistrer</button>
-    <article class="my-profile" *ngFor="#profile of profiles" (click)="onLoadProfile(profile)" >
-    <h4>{{profile.profileName}}</h4>
-    <p>Villes : {{profile.cities.join(', ')}}</p>
-    <span class="delete" (click)="onDeleteProfile($event, profile)">X</span>
-</article>
+    <div class="sidebar">
+    <div class="sidebar-container" [ngClass]="{'none': !sideBarOpen}">
+        <h3>Mes villes</h3>
+        <button class="waves-effect waves-light btn" (click)="onSaveNew()">Enregistrer</button>
+        <article class="my-profile" *ngFor="#profile of profiles" (click)="onLoadProfile(profile)" >
+          <h4>{{profile.profileName}}</h4>
+          <p>Villes : {{profile.cities.join(', ')}}</p>
+          <span class="delete" (click)="onDeleteProfile($event, profile)">X</span>
+        </article>
+    </div>
+    </div>
+    <div class="icon-settings" (click)="sideBarOpen = !sideBarOpen">
+     <i class="material-icons">settings</i>
+  </div>
+
 
 `,
+  host: {
+    '[class.sidebar-closed]': '!sideBarOpen'
+  },
 
   styleUrls: ['src/css/sidebar.css'],
   providers:[ProfileService],
 
 })
 export class SidebarComponent implements OnInit{
-  profiles: Profile[]
+
+  profiles: Profile[];
   constructor(private _profileService: ProfileService, private _weatherService: WeatherService){}
+  sideBarOpen: boolean;
   onSaveNew(){
     const cities = this._weatherService.getWeatherItems().map(function (element: WeatherItem) {
       return element.cityName;
@@ -49,6 +61,7 @@ export class SidebarComponent implements OnInit{
     this._profileService.deleteProfile(profile);
   }
   ngOnInit(){
+    this.sideBarOpen = false;
     this.profiles = this._profileService.getProfiles();
   }
 }

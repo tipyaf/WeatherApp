@@ -11,9 +11,10 @@ import {WeatherSearchComponent} from "./weather-search.component";
     <weather-search></weather-search>
       <weather-item *ngFor="#weatherItem of weatherItems" [item]="weatherItem"></weather-item>
       
-      <a class="btn-floating btn-large waves-effect waves-light red right" (click)="onClearAll()"><i class="material-icons">clear</i></a>
+      <a class="btn-floating btn-large waves-effect waves-light red remove-btn" (click)="onClearAll()"><i class="material-icons">clear</i></a>
     </section>
 `,
+  styles:[':host{width: 100%}'],
   directives:[WeatherItemComponent, WeatherSearchComponent],
   providers:[WeatherService]
 })
