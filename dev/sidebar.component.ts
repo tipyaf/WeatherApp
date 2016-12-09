@@ -10,13 +10,17 @@ import {WeatherItem} from "./meteo/weather";
     <div class="sidebar">
     <div class="sidebar-container" [ngClass]="{'none': !sideBarOpen}">
         <h3>Mes villes</h3>
-        <button class="waves-effect waves-light btn" (click)="onSaveNew()">Enregistrer</button>
+        
         <article class="my-profile" *ngFor="#profile of profiles" (click)="onLoadProfile(profile)" >
           <h4>{{profile.profileName}}</h4>
           <p>Villes : {{profile.cities.join(', ')}}</p>
-          <i class="delete material-icons" (click)="onDeleteProfile($event, profile)">remove</i>
+          <i class="delete material-icons" (click)="onDeleteProfile($event, profile)">delete_forever</i>
         </article>
+       
     </div>
+    <div class="center">
+ <i class="material-icons save-profile-btn" [ngClass]="{'none': !sideBarOpen}" (click)="onSaveNew()">backup</i>
+</div>
     </div>
     <div class="icon-settings" (click)="sideBarOpen = !sideBarOpen">
      <i class="material-icons">settings</i>
