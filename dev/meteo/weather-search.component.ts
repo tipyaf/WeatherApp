@@ -8,12 +8,12 @@ import {OnInit} from "angular2/src/core/linker/interfaces";
   template: `
     <section class="weather-search">
       <form  #f="ngForm">
-      <div class="search-wrapper row">
-            <input class="col s10" ngControl="location" type="text" id="city" (input)="onSearchLocation(input.value, data)" minlength="1" required #input>
-            <div type="submit" class="search-results col s12" (click)="onSubmit(f)">{{data.name}} <i class="material-icons col s2">search</i></div>
+      <div class="search-wrapper">
+            <input class="" ngControl="location" type="text" id="city" (input)="onSearchLocation(input.value, data)" minlength="1" required #input>
+             <button type="submit" class="waves-effect waves-light btn search-btn" (click)="onSubmit(f); input.value = ''">{{data.name}} <i class="material-icons col s2">search</i></button>
       </div>
+        
       </form>
-
     </section>
 `,
 })
@@ -21,7 +21,7 @@ export class WeatherSearchComponent implements OnInit {
   private searchStream = new Subject <string>()
   data: any = {};
   constructor(private _weatherService: WeatherService){}
-  onSubmit(form){
+  onSubmit(form, input){
       const weatherItem = new WeatherItem(this.data.name, this.data.weather[0].description, this.data.main.temp, this.data.weather[0].icon)
       this._weatherService.addWeatherItem(weatherItem)
       console.log(WeatherItem)

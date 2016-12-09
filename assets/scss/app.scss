@@ -1,4 +1,5 @@
-
+$bkg-shadow: rgba(0, 19, 56, 0.35);
+$bkg-shadow-hover: rgba(0, 18, 45, 0.35);
 body {
   //padding: 32px;
   margin: 0 !important;
@@ -69,4 +70,31 @@ input:not([type]):focus:not([readonly]), input[type=text]:focus:not([readonly]),
 ::-webkit-scrollbar-thumb
 {
   display: none;
+}
+
+
+.search-btn{
+  width: 100% !important;
+  background-color: $bkg-shadow;
+}
+.search-btn:hover{
+  background-color: $bkg-shadow-hover;
+}
+.search-btn:focus{
+  background-color: $bkg-shadow-hover;
+}
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  border: none !important;
+  -webkit-text-fill-color: white !important;
+  -webkit-box-shadow: 0 0 0px 1000px $bkg-shadow inset !important;
+  transition: background-color 5000s ease-in-out 0s !important;
 }

@@ -14,7 +14,7 @@ import {WeatherItem} from "./meteo/weather";
         <article class="my-profile" *ngFor="#profile of profiles" (click)="onLoadProfile(profile)" >
           <h4>{{profile.profileName}}</h4>
           <p>Villes : {{profile.cities.join(', ')}}</p>
-          <span class="delete" (click)="onDeleteProfile($event, profile)">X</span>
+          <i class="delete material-icons" (click)="onDeleteProfile($event, profile)">remove</i>
         </article>
     </div>
     </div>
