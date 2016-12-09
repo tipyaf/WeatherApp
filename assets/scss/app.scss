@@ -55,3 +55,18 @@ input:not([type]):focus:not([readonly]), input[type=text]:focus:not([readonly]),
   bottom: 5px;
   right: 5px;
 }
+::-webkit-scrollbar
+{
+  width: 0;  /* for vertical scrollbars */
+  height: 0; /* for horizontal scrollbars */
+}
+
+::-webkit-scrollbar-track
+{
+  display: none;
+}
+
+::-webkit-scrollbar-thumb
+{
+  display: none;
+}
