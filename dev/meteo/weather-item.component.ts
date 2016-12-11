@@ -23,7 +23,6 @@ export class WeatherItemComponent {
   @Input('item') weatherItem: WeatherItem;
   iconWeather = new IconsWeather();
 
-
   iconsDescription(key){
     this.iconWeather["clear sky"] = '1';
     this.iconWeather["few clouds"] = 'A';
