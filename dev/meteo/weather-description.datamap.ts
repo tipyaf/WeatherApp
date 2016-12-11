@@ -1,1 +1,5 @@
-// export const oMap:Map<string,{name:string,price:number}> = new Map<string,{name:string,price:number}>();
+export class IconsWeather {
+  // iconsWeather: string[] =[];
+  [index: string]: string;
+
+}

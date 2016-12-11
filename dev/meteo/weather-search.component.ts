@@ -22,20 +22,20 @@ export class WeatherSearchComponent implements OnInit {
   data: any = {};
   constructor(private _weatherService: WeatherService){}
   onSubmit(form, input){
-      const weatherItem = new WeatherItem(this.data.name, this.data.weather[0].description, this.data.main.temp, this.data.weather[0].icon)
-      this._weatherService.addWeatherItem(weatherItem)
+      const weatherItem = new WeatherItem(this.data.name, this.data.weather[0].description, this.data.main.temp, this.data.weather[0].icon);
+      this._weatherService.addWeatherItem(weatherItem);
       console.log(WeatherItem)
   }
 
   onSearchLocation(cityName: string, data){
     if (cityName != ''){
-      console.log('string pleine')
+      console.log('string pleine');
       this.searchStream
-        .next(cityName)
+        .next(cityName);
     }
   else {
-      console.log('string vide')
-      data.name = ''
+      console.log('string vide');
+      data.name = '';
     }
 
   }

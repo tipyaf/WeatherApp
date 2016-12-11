@@ -32,7 +32,9 @@
   font-size: 22px;
   color: #5CA4CA ;
 }
-
+.col-1 .weather-icon:before{
+  font-size: 22px;
+}
 .col-2 {
   display: flex;
   flex-direction: row;
@@ -43,5 +45,10 @@
 .temperature{
   font-size:22px
 }
-
+.weather-icon:before {
+  font-family: 'MeteoconsRegular';
+  content: attr(data-icon);
+  color: white;
+  font-size: 3rem;
+}
 
