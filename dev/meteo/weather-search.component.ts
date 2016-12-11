@@ -10,7 +10,7 @@ import {OnInit} from "angular2/src/core/linker/interfaces";
       <form  #f="ngForm">
       <div class="search-wrapper">
             <input class="" ngControl="location" type="text" id="city" (input)="onSearchLocation(input.value, data)" minlength="1" required #input>
-             <button type="submit" class="waves-effect waves-light btn search-btn" (click)="onSubmit(f); input.value = ''">{{data.name}} <i class="material-icons col s2">search</i></button>
+             <button type="submit" class="waves-effect waves-light btn search-btn" (click)="onSubmit(f); input.value = ''"><i class="material-icons col s2">add</i>{{data.name}}</button>
       </div>
         
       </form>
