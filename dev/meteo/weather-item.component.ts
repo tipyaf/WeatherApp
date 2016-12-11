@@ -8,10 +8,11 @@ import {IconsWeather} from "./weather-description.datamap";
         <article class="my-panel">
             <div class="col-1">
                 <h3>{{weatherItem.cityName}}</h3>
-                <span class="temperature">{{weatherItem.temperature}}<span class="weather-icon celsius" data-icon="*"></span></span>
+                <span class="temperature"><span class="weather-icon celsius" data-icon="'"></span>{{weatherItem.temperature}}<span class="weather-icon celsius" data-icon="*"></span></span>
             </div>
             <div class="col-3">
               <span class="weather-icon" [attr.data-icon]="iconsDescription(weatherItem.description)"></span>
+            
             </div>
         </article>
 `,
@@ -24,16 +25,18 @@ export class WeatherItemComponent {
 
 
   iconsDescription(key){
-    this.iconWeather["clear sky"] = 'B';
+    this.iconWeather["clear sky"] = '1';
     this.iconWeather["few clouds"] = 'A';
     this.iconWeather["scattered clouds"] = 'H';
     this.iconWeather["broken clouds"] = 'N';
     this.iconWeather["shower rain"] = 'Q';
+    this.iconWeather["light rain"] = 'Q';
     this.iconWeather["rain"] = 'R';
     this.iconWeather["thunderstorm"] = 'P';
     this.iconWeather["snow"] = 'V';
     this.iconWeather["mist"] = 'M';
     this.iconWeather["fog"] = 'M';
+    console.log(this.weatherItem.description, 'description');
   return this.iconWeather[key]
   }
 
