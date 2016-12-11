@@ -27,6 +27,7 @@ export class WeatherItemComponent {
     this.iconWeather["clear sky"] = '1';
     this.iconWeather["few clouds"] = 'A';
     this.iconWeather["scattered clouds"] = 'H';
+    this.iconWeather["overcast clouds"] = 'Y';
     this.iconWeather["broken clouds"] = 'N';
     this.iconWeather["shower rain"] = 'Q';
     this.iconWeather["light rain"] = 'Q';

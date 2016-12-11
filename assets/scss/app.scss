@@ -1,4 +1,4 @@
-$bkg-shadow: rgba(0, 19, 56, 0.35);
+$bkg-shadow: #f9c922;
 $bkg-shadow-hover: rgba(0, 18, 45, 0.35);
 $yellow: #f9c922;
 $myRed: #e74c3c;
@@ -9,6 +9,7 @@ body {
   font-family: "Roboto", Arial, sans-serif;
   font-size: 16px;
   background: url("../../img/bkg.jpg") fixed no-repeat center;
+  //background-color: $green;
   background-size: cover;
   color: white !important;
 }
@@ -24,6 +25,8 @@ header{
 .main-container{
   display: flex;
   flex-direction: row;
+  height: 100vh;
+  overflow: hidden;
 }
 
 .title{
@@ -83,7 +86,7 @@ input:not([type]):focus:not([readonly]), input[type=text]:focus:not([readonly]),
 
 .search-btn{
   width: 100% !important;
-  background-color: $bkg-shadow;
+  background-color: $bkg-shadow-hover;
 }
 .search-btn:hover{
   background-color: $bkg-shadow-hover;
@@ -103,7 +106,7 @@ select:-webkit-autofill:hover,
 select:-webkit-autofill:focus {
   border: none !important;
   -webkit-text-fill-color: white !important;
-  -webkit-box-shadow: 0 0 0px 1000px $bkg-shadow inset !important;
+  -webkit-box-shadow: 0 0 0px 1000px $bkg-shadow-hover inset !important;
   transition: background-color 5000s ease-in-out 0s !important;
 }
 
@@ -215,3 +218,4 @@ select:-webkit-autofill:focus {
 #loader-wrapper .loader-section.section-right {
   right: 0;
 }
+
