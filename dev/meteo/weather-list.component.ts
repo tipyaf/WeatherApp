@@ -13,7 +13,7 @@ import {WeatherSearchComponent} from "./weather-search.component";
       <a class="btn-floating btn-large waves-effect waves-light red remove-btn" (click)="onClearAll()"><i class="material-icons">clear</i></a>
     </section>
 `,
-  styles:[':host{width: 100%}'],
+  styles:[':host{width: 100%; padding: 10px;}'],
   directives:[WeatherItemComponent, WeatherSearchComponent],
   providers:[WeatherService]
 })

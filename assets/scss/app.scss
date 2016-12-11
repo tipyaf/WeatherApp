@@ -1,5 +1,8 @@
 $bkg-shadow: rgba(0, 19, 56, 0.35);
 $bkg-shadow-hover: rgba(0, 18, 45, 0.35);
+$yellow: #f9c922;
+$myRed: #e74c3c;
+$green: #16a085;
 body {
   //padding: 32px;
   margin: 0 !important;
@@ -42,13 +45,18 @@ header{
   font-size: 28px !important;
   background-color: rgba(0, 21, 64, 0.35);
 }
+weather-search input:not([type]),  weather-search input[type=text] {
+
+   border-bottom: 1px solid $yellow !important;
+ }
 
 input:not([type]):focus:not([readonly]), input[type=text]:focus:not([readonly]), input[type=password]:focus:not([readonly]), input[type=email]:focus:not([readonly]), input[type=url]:focus:not([readonly]), input[type=time]:focus:not([readonly]), input[type=date]:focus:not([readonly]), input[type=datetime]:focus:not([readonly]), input[type=datetime-local]:focus:not([readonly]), input[type=tel]:focus:not([readonly]), input[type=number]:focus:not([readonly]), input[type=search]:focus:not([readonly]), textarea.materialize-textarea:focus:not([readonly]) {
-  border-bottom: 1px solid #e0e0e0 !important;
-  box-shadow: 0 1px 0 0 #e0e0e0 !important;
+  border-bottom: 1px solid $yellow !important;
+  box-shadow: 0 1px 0 0 $yellow !important;
 }
+
 .sidebar-closed{
-  width: 0 !important;
+  width: 5vw !important;
   transition: all 0.5s;
 }
 .remove-btn{
@@ -97,26 +105,6 @@ select:-webkit-autofill:focus {
   -webkit-text-fill-color: white !important;
   -webkit-box-shadow: 0 0 0px 1000px $bkg-shadow inset !important;
   transition: background-color 5000s ease-in-out 0s !important;
-}
-/* Demo Styles */
-#content {
-  margin: 0 auto;
-  padding-bottom: 50px;
-  width: 80%;
-  max-width: 978px;
-}
-
-ul {
-  list-style: square;
-}
-ul li a {
-  text-decoration: none;
-  color: #34495e;
-  display: block;
-  margin: 10px;
-}
-ul li a:hover {
-  text-decoration: underline;
 }
 
 /* The Loader */

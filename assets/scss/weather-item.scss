@@ -1,4 +1,8 @@
-
+$bkg-shadow: rgba(0, 19, 56, 0.35);
+$bkg-shadow-hover: rgba(0, 18, 45, 0.35);
+$yellow: #f9c922;
+$myRed: #e74c3c;
+$green: #16a085;
 
 .weather-list{
   height: 82vh;
@@ -13,6 +17,8 @@
   justify-content: space-between;
   align-items: center;
   padding: 15px;
+  border: 1px solid $green;
+  margin-bottom: 15px;
   box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
   transition: all 0.3s cubic-bezier(.25,.8,.25,1);
 }
@@ -30,7 +36,7 @@
   margin: 0 0 10px 0;
   padding: 0;
   font-size: 22px;
-  color: #5CA4CA ;
+  color: $green ;
 }
 .col-1 .weather-icon:before{
   font-size: 22px;
@@ -52,3 +58,6 @@
   font-size: 3rem;
 }
 
+.celsius:before{
+  color: $myRed;
+}

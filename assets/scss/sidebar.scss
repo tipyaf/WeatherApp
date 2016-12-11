@@ -10,8 +10,10 @@
   align-items: center;
   transition: all 0.5s;
   overflow-x: hidden;
+  background-color: rgba(255, 206, 35, 0.54)
 
 }
+
 .none{
   display: none;
 }
@@ -27,8 +29,13 @@
   cursor: pointer;
 }
 
-.icon-settings i{
-color: rgba(240, 248, 255, 0.31);
+.icon-settings {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: rgba(240, 248, 255, 0.53);
 }
 article{
   display: flex;
