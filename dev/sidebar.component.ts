@@ -7,8 +7,8 @@ import {WeatherItem} from "./meteo/weather";
 @Component({
   selector: 'sidebar',
   template: `
-    <div class="sidebar">
-    <div class="sidebar-container" [ngClass]="{'none': !sideBarOpen}">
+    <div class="sidebar" [ngClass]="{'none': !sideBarOpen}">
+    <div class="sidebar-container">
         <article class="my-profile" *ngFor="#profile of profiles" (click)="onLoadProfile(profile)" >
           <p>{{profile.cities.join(', ')}}</p>
           <i class="delete material-icons" (click)="onDeleteProfile($event, profile)">delete_forever</i>

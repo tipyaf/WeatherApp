@@ -1,6 +1,5 @@
 import {Component} from 'angular2/core';
 import {WeatherListComponent} from "./meteo/weather-list.component";
-import {WeatherSearchComponent} from "./meteo/weather-search.component";
 import {SidebarComponent} from "./sidebar.component";
 
 @Component({
