@@ -22,7 +22,12 @@ export class WeatherSearchComponent implements OnInit {
   data: any = {};
   constructor(private _weatherService: WeatherService){}
   onSubmit(form, input, cityName){
+
+    // TODO: redirect description, temperature... => in sidebar too +
       const weatherItem = new WeatherItem(this.data.city.name, this.data.weather[0].description, this.data.main.temp, this.data.weather[0].icon, this.data.id);
+
+
+
       this._weatherService.addWeatherItem(weatherItem);
       console.log(input, 'input')
   }
