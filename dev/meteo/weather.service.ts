@@ -26,9 +26,12 @@ export class WeatherService {
 
     searchWeatherData(cityName: string): Observable<any>{
         return this._http.get('http://api.openweathermap.org/data/2.5/weather?q=' + cityName + '&APPID=bf24d4ebdd1fd36ff8a1a73369906a37&units=metric')
-          .map(response => response.json())
+          .map(function (response) {
+            console.log(response.json(), 'data')
+             return response.json()
+          })
           .catch(error => {
-            console.error('error', 'données météo non reçues')
+            console.error(error, 'données météo non reçues')
             return Observable.throw(error.json())
           })
     }

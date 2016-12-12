@@ -43,6 +43,7 @@ $myRed: #e74c3c;
 }
 .my-profile i:hover {
   color: $myRed;
+  transition: all 0.5s;
 }
 .delete:hover {
   cursor: pointer;
