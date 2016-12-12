@@ -9,7 +9,7 @@ import {OnInit} from "angular2/src/core/linker/interfaces";
     <section class="weather-search">
       <form  #f="ngForm">
       <div class="search-wrapper">
-            <input class="" ngControl="location" type="text" id="city" (input)="onSearchLocation(input.value, data)" minlength="1" required #input>
+            <input class="" ngControl="location" type="text" id="city" (input)="onSearchLocation(input.value, data, data.name)" minlength="1" required #input>
              <button type="submit" class="waves-effect waves-light btn search-btn" (click)="onSubmit(f); input.value = ''"><i class="material-icons col s2">add</i>{{data.name}}</button>
       </div>
         
@@ -18,20 +18,22 @@ import {OnInit} from "angular2/src/core/linker/interfaces";
 `,
 })
 export class WeatherSearchComponent implements OnInit {
-  private searchStream = new Subject <string>()
+  private searchStream = new Subject <string>();
   data: any = {};
   constructor(private _weatherService: WeatherService){}
-  onSubmit(form, input){
-      const weatherItem = new WeatherItem(this.data.name, this.data.weather[0].description, this.data.main.temp, this.data.weather[0].icon, this.data.id);
+  onSubmit(form, input, cityName){
+      const weatherItem = new WeatherItem(this.data.city.name, this.data.weather[0].description, this.data.main.temp, this.data.weather[0].icon, this.data.id);
       this._weatherService.addWeatherItem(weatherItem);
-      console.log(WeatherItem)
+      console.log(input, 'input')
   }
+
+
 
   onSearchLocation(cityName: string, data){
     if (cityName != ''){
       console.log('string pleine');
       this.searchStream
-        .next(cityName);
+        .next(cityName)
     }
   else {
       console.log('string vide');

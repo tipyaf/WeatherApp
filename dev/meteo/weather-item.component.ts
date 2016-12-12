@@ -12,7 +12,6 @@ import {IconsWeather} from "./weather-description.datamap";
             </div>
             <div class="col-3">
               <span class="weather-icon" [attr.data-icon]="iconsDescription(weatherItem.description)"></span>
-            
             </div>
         </article>
 `,

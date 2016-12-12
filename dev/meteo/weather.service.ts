@@ -25,25 +25,31 @@ import {WeatherItem} from "./weather";
       }
     }
 
+
     searchWeatherData(cityName: string): Observable<any>{
-        return this._http.get('http://api.openweathermap.org/data/2.5/weather?q=' + cityName + this.apiKey +'&units=metric')
+        return this._http.get('http://api.openweathermap.org/data/2.5/forecast/daily?q=' + cityName + '&units=metric&cnt=7' + this.apiKey)
           .map(function (response) {
-            console.log(response.json(), 'data')
+            console.info(response.json(), 'data');
              return response.json()
           })
           .catch(error => {
-            console.error(error, 'données météo non reçues')
+            console.error(error, 'données météo non reçues');
             return Observable.throw(error.json())
           })
+
     }
-    searchForecastData(cityId: string): Observable<any>{
-      return this._http.get('http://api.openweathermap.org/data/2.5/forecast?id'+ cityId)
+    searchForecastData(cityName: string): Observable<any>{
+      console.info(cityName, 'request forecast');
+      return this._http.get('http://api.openweathermap.org/data/2.5/forecast?q='+ cityName + this.apiKey)
         .map(function (data) {
-          console.log(data , 'forecastData')
+          console.info(data.json() , 'forecastData');
+          return data.json()
         })
         .catch(error => {
-          console.error(error,  'forecast non reçu')
+          console.error(error,  'forecast non reçu');
           return Observable.throw(error.json())
         })
+
     }
+
 }
