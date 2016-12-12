@@ -22,7 +22,7 @@ export class WeatherSearchComponent implements OnInit {
   data: any = {};
   constructor(private _weatherService: WeatherService){}
   onSubmit(form, input){
-      const weatherItem = new WeatherItem(this.data.name, this.data.weather[0].description, this.data.main.temp, this.data.weather[0].icon);
+      const weatherItem = new WeatherItem(this.data.name, this.data.weather[0].description, this.data.main.temp, this.data.weather[0].icon, this.data.id);
       this._weatherService.addWeatherItem(weatherItem);
       console.log(WeatherItem)
   }
