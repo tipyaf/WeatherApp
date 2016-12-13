@@ -66,6 +66,7 @@ input:not([type]):focus:not([readonly]), input[type=text]:focus:not([readonly]),
   position: fixed;
   bottom: 5px;
   right: 5px;
+  background-color: $yellow !important;
 }
 ::-webkit-scrollbar
 {

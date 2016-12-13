@@ -29,7 +29,7 @@ import {WeatherItem} from "./weather";
     searchWeatherData(cityName: string): Observable<any>{
         return this._http.get('http://api.openweathermap.org/data/2.5/forecast/daily?q=' + cityName + '&units=metric&cnt=7' + this.apiKey)
           .map(function (response) {
-            console.info(response.json(), 'data');
+            console.info(response.json(), 'réponse api requete');
              return response.json()
           })
           .catch(error => {

@@ -1,5 +1,5 @@
 $bkg-shadow: rgba(0, 19, 56, 0.35);
-$bkg-shadow-hover: rgba(0, 18, 45, 0.35);
+$bkg-shadow-hover: rgba(0, 17, 41, 0.35);
 $yellow: #f9c922;
 $myRed: #e74c3c;
 $green: #16a085;
@@ -14,6 +14,7 @@ $green: #16a085;
   padding: 15px;
   border: 1px solid $bkg-shadow;
   margin-bottom: 15px;
+  overflow: hidden;
   box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
   transition: all 0.3s cubic-bezier(.25,.8,.25,1);
 }
@@ -41,6 +42,15 @@ $green: #16a085;
   vertical-align: top;
   text-align: right;
 }
+.col-3{
+  width: 55%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  transform: translateX(90%);
+  transition: all 0.6s
+}
 .temperature{
   font-size:22px
 }
@@ -48,9 +58,30 @@ $green: #16a085;
   font-family: 'MeteoconsRegular';
   content: attr(data-icon);
   color: white;
+}
+.weather-today{
   font-size: 3rem;
 }
-
 .celsius:before{
   color: $myRed;
+}
+.previsions{
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  opacity: 0;
+  transition: all 0.8s;
+}
+.prevision-box{
+  width: 100%;
+}
+.opened{
+  transform: translateX(0);
+  opacity: 1;
+  transition: all 0.6s;
+}
+.opacity{
+  opacity: 1;
+  transition: all 1s;
 }

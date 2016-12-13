@@ -5,21 +5,23 @@ import {IconsWeather} from "./weather-description.datamap";
 @Component({
   selector: 'weather-item',
   template: `
-        <article class="my-panel">
+        <article class="my-panel" (click)="isOpen = !isOpen">
             <div class="col-1">
                 <h3>{{weatherItem.cityName}}</h3>
                 <span class="temperature"><span class="weather-icon celsius" data-icon="'"></span>{{weatherItem.temperature}}<span class="weather-icon celsius" data-icon="*"></span></span>
             </div>
-            <div class="col-3">
-              <span class="weather-icon" [attr.data-icon]="iconsDescription(weatherItem.main)"></span>
-    
+            <div class="col-3" [ngClass]="{'opened': isOpen}">
+                <span class="weather-icon weather-today" [attr.data-icon]="iconsDescription(weatherItem.main)"></span>
+                  <div class="previsions" [ngClass]="{'opacity': isOpen}">
+                    <div class="prevision-box" *ngFor="#day of weatherItem.dayList; #i=index;">
+                        <span class="weather-icon" [attr.data-icon]="iconsDescription(day.weather[0].main)" *ngIf="i > 0"></span>
+                        <p *ngIf="i > 0">{{day.temp.day}}<span class="weather-icon celsius" data-icon="*"></span></p>
+                        <div *ngIf="i > 0">J+{{i+1}}</div>
+                  </div>
+              
             </div>
-            <div class="previsions" *ngFor="#day of weatherItem.dayList; #i = index;">
-             <!--*ngIf="i > 0"-->
-              <span class="weather-icon" [attr.data-icon]="iconsDescription(day.weather[0].main)"></span>
-              <p>{{day.temp.day}}<span class="weather-icon celsius" data-icon="*"></span></p>
-              {{i+1}}
             </div>
+          
             <!--{{weatherItem.dayList[1].weather[0].description }}-->
         </article>
 `,
@@ -45,10 +47,7 @@ export class WeatherItemComponent {
     this.iconWeather["Snow"] = 'V';
     this.iconWeather["Mist"] = 'M';
       // this.iconWeather["fog"] = 'M';
-
   return this.iconWeather[key]
   }
-
-
 
 }
