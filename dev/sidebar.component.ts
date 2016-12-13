@@ -50,7 +50,7 @@ export class SidebarComponent implements OnInit{
         .retry()
         .subscribe(
           data => {
-            const weatherItem = new WeatherItem(data.name, data.weather[0].description, data.main.temp, data.weather[0].icon, data.id);
+            const weatherItem = new WeatherItem(data.city.name, data.list[0].weather[0].main, data.list[0].temp.day, data.list);
             this._weatherService.addWeatherItem(weatherItem);
           }
         );

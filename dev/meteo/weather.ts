@@ -1,4 +1,4 @@
 export class WeatherItem{
-  constructor(public cityName: string, public description: string, public temperature: number, public icon: string, public cityId: string){}
+  constructor(public cityName: string, public main: string, public temperature: number,  public dayList: string[]){}
 }
-// TODO: add List to daily weather
+

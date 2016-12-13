@@ -38,18 +38,5 @@ import {WeatherItem} from "./weather";
           })
 
     }
-    searchForecastData(cityName: string): Observable<any>{
-      console.info(cityName, 'request forecast');
-      return this._http.get('http://api.openweathermap.org/data/2.5/forecast?q='+ cityName + this.apiKey)
-        .map(function (data) {
-          console.info(data.json() , 'forecastData');
-          return data.json()
-        })
-        .catch(error => {
-          console.error(error,  'forecast non reçu');
-          return Observable.throw(error.json())
-        })
-
-    }
 
 }
