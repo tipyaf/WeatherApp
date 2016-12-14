@@ -9,7 +9,7 @@ import {WeatherSearchComponent} from "./weather-search.component";
   template: `
 <weather-search></weather-search>
     <section class="weather-list" style="overflow: auto;
-  height: 100%;">
+  height: 80%;">
       <weather-item *ngFor="#weatherItem of weatherItems" [item]="weatherItem"></weather-item>
       <a class="btn-floating btn-large waves-effect waves-light red remove-btn" (click)="onClearAll()"><i class="material-icons">clear</i></a>
     </section>
